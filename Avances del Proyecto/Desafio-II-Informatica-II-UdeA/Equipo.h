@@ -5,6 +5,16 @@
 #include "Jugador.h"
 using namespace std;
 
+int getGolesFavor();
+int getGolesContra();
+string getNombre();
+
+void sumarGolesFavor(int g);
+void sumarGolesContra(int g);
+
+void sumarVictoria();
+void sumarEmpate();
+void sumarDerrota();
 class Equipo
 
 {
@@ -29,6 +39,17 @@ public:
 
     void inicializarJugadores(int totalGoles);
     void mostrarEquipo();
+
+    int getGolesFavor();
+    int getGolesContra();
+    string getNombre();
+
+    void sumarGolesFavor(int g);
+    void sumarGolesContra(int g);
+
+    void sumarVictoria();
+    void sumarEmpate();
+    void sumarDerrota();
 };
 
 #endif // EQUIPO_H

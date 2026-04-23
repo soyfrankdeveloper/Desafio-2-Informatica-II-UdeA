@@ -1,5 +1,6 @@
 #include "Equipo.h"
 
+
 Equipo::Equipo()
 
 {
@@ -60,4 +61,36 @@ void Equipo::mostrarEquipo()
     {
         jugadores[i].mostrar();
     }
+}
+
+int Equipo::getGolesFavor(){
+    return golesFavor;
+}
+
+int Equipo::getGolesContra(){
+    return golesContra;
+}
+
+string Equipo::getNombre(){
+    return nombrePais;
+}
+
+void Equipo::sumarGolesFavor(int g){
+    golesFavor += g;
+}
+
+void Equipo::sumarGolesContra(int g){
+    golesContra += g;
+}
+
+void Equipo::sumarVictoria(){
+    ganados++;
+}
+
+void Equipo::sumarEmpate(){
+    empatados++;
+}
+
+void Equipo::sumarDerrota(){
+    perdidos++;
 }

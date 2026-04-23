@@ -13,4 +13,5 @@ SOURCES += \
 
 HEADERS += \
     Equipo.h \
-    Jugador.h
+    Jugador.h \
+    Partido.h
