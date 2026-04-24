@@ -1,6 +1,5 @@
 #include "Equipo.h"
 
-
 Equipo::Equipo()
 
 {
@@ -63,34 +62,43 @@ void Equipo::mostrarEquipo()
     }
 }
 
-int Equipo::getGolesFavor(){
-    return golesFavor;
+//sobrecarga de operador, xd
+bool Equipo::operator<(const Equipo& otro)const{
+    if(this->getPuntos()!=otro.getPuntos())
+        return this ->getPuntos()>otro.getPuntos();
+    if(this->getDiferenciaGoles()!=otro.getDiferenciaGoles())
+        return this ->getDiferenciaGoles()> otro.getDiferenciaGoles();
+
+    return this ->golesFavor >otro.golesFavor;
 }
 
-int Equipo::getGolesContra(){
-    return golesContra;
+
+//getters
+
+string Equipo::getNombrePais()const {return nombrePais;}
+int Equipo::getRanking()const {return ranking;}
+int Equipo::getGolesFavor() const{return golesFavor;}
+int Equipo::getGolesContra()const{return golesContra;}
+
+//calculos para la tabla
+int Equipo::getPuntos()const {return(ganados*3)+(empatados *1);}
+int Equipo::getDiferenciaGoles()const{return golesFavor-golesContra;}
+
+//retornamos el puntero al jugador para simular sus eventos del partido
+Jugador* Equipo::getJugador(int Indice){
+    if(Indice >=0 && Indice <cantidadJugadores)return &jugadores[Indice];
+    return nullptr;
 }
 
-string Equipo::getNombre(){
-    return nombrePais;
-}
+//setters
+void Equipo::setNombrePais(string nombre){nombrePais=nombre;}
+void Equipo::setRanking(int r){ranking = r;}
 
-void Equipo::sumarGolesFavor(int g){
-    golesFavor += g;
-}
-
-void Equipo::sumarGolesContra(int g){
-    golesContra += g;
-}
-
-void Equipo::sumarVictoria(){
-    ganados++;
-}
-
-void Equipo::sumarEmpate(){
-    empatados++;
-}
-
-void Equipo::sumarDerrota(){
-    perdidos++;
+//vamos actualizando el historial del equipo despues de un partido
+void Equipo::registrarPartido(int golesAnotados, int golesRecibidos){
+    golesFavor += golesAnotados;
+    golesContra += golesRecibidos;
+    if (golesAnotados >golesRecibidos)ganados++;
+    else if (golesAnotados==golesRecibidos)empatados++;
+    else perdidos++;
 }

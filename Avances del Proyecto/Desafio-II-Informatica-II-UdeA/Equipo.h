@@ -2,19 +2,10 @@
 #define EQUIPO_H
 
 #include <iostream>
+#include <string>
 #include "Jugador.h"
 using namespace std;
 
-int getGolesFavor();
-int getGolesContra();
-string getNombre();
-
-void sumarGolesFavor(int g);
-void sumarGolesContra(int g);
-
-void sumarVictoria();
-void sumarEmpate();
-void sumarDerrota();
 class Equipo
 
 {
@@ -40,16 +31,22 @@ public:
     void inicializarJugadores(int totalGoles);
     void mostrarEquipo();
 
-    int getGolesFavor();
-    int getGolesContra();
-    string getNombre();
+    bool operator<(const Equipo& otro)const;
 
-    void sumarGolesFavor(int g);
-    void sumarGolesContra(int g);
+    //getters
+    string getNombrePais()const;
+    int getRanking()const;
+    int getGolesFavor()const;
+    int getGolesContra()const;
+    int getPuntos()const;
+    int getDiferenciaGoles()const;
 
-    void sumarVictoria();
-    void sumarEmpate();
-    void sumarDerrota();
+    Jugador* getJugador(int Indice); //para sacar los 11 titulares
+
+    //setters
+    void setNombrePais(string nombre);
+    void setRanking(int r);
+    void registrarPartido(int golesAnotados, int golesRecibidos);
 };
 
 #endif // EQUIPO_H

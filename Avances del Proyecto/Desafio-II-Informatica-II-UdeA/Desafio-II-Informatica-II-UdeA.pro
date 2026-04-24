@@ -13,5 +13,7 @@ SOURCES += \
 
 HEADERS += \
     Equipo.h \
+    Grupo.h \
     Jugador.h \
-    Partido.h
+    Partido.h \
+    Torneo.h
