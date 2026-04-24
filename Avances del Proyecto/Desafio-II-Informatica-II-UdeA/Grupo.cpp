@@ -55,3 +55,10 @@ void Grupo::mostrarTabla(){
              <<"DG: "<<equipos[i]->getDiferenciaGoles()<<endl;
     }
 }
+
+Equipo* Grupo::getClasificado(int posicion){
+    if(posicion==0||posicion==1){
+
+    }
+    return nullptr;
+}
