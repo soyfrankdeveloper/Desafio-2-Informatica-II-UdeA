@@ -19,6 +19,7 @@ private:
     int amarillas;
     int rojas;
     int faltas;
+    int asistencias;
 
 public:
 
@@ -32,6 +33,12 @@ public:
     string getApellido();
     int getNumero();
     int getGoles();
+    int getAsistencias() const { return asistencias; }
+    int getMinutos();
+    int getAmarillas();
+    int getRojas();
+    int getFaltas();
+    int getAsistencias();
 
     void anotarGol();
     void jugarPartido(int minutosJugados);

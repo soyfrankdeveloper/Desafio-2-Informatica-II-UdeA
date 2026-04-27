@@ -17,3 +17,6 @@ HEADERS += \
     Jugador.h \
     Partido.h \
     Torneo.h
+
+DISTFILES += \
+    README.md

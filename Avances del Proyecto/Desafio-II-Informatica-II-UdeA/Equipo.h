@@ -6,12 +6,16 @@
 #include "Jugador.h"
 using namespace std;
 
+
 class Equipo
 
 {
 private:
     string nombrePais;
     int ranking;
+    string confederacion;
+    char grupo;
+
 
     int golesFavor;
     int golesContra;
@@ -40,12 +44,21 @@ public:
     int getGolesContra()const;
     int getPuntos()const;
     int getDiferenciaGoles()const;
+    int getGanados()const;
+    int getEmpatados()const;
+    int getPerdidos()const;
+    int getPartidosJugados()const;
+    char getGrupo() const { return grupo; }
+    string getConfederacion() const;
+    void setConfederacion(string c);
+
 
     Jugador* getJugador(int Indice); //para sacar los 11 titulares
 
     //setters
     void setNombrePais(string nombre);
     void setRanking(int r);
+    void setGrupo(char g){ grupo = g; }
     void registrarPartido(int golesAnotados, int golesRecibidos);
 };
 

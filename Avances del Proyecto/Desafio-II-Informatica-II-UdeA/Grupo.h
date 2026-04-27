@@ -25,6 +25,10 @@ public:
     void mostrarTabla();
 
     Equipo* getClasificado(int posicion);
+    Equipo* getTercero();
+    Equipo* getEquipo(int i);
+    Partido* getPartido(int i);
+
 };
 
 template <class T>

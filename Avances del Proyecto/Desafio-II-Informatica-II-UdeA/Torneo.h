@@ -12,8 +12,8 @@ using namespace std;
 
 class Torneo {
 private:
-    Equipo* equipos[32];
-    Grupo* grupos[8];
+    Equipo* equipos[48];
+    Grupo* grupos[12];
 
     // Punteros para las fases finales
     Equipo* octavos[16];
@@ -21,6 +21,9 @@ private:
     Equipo* semis[4];
     Equipo* finalistas[2];
     Equipo* campeon;
+    Equipo* subcampeon;
+    Equipo* tercerLugar;
+    Equipo* cuartoLugar;
 
 public:
     Torneo();
@@ -31,6 +34,8 @@ public:
     void simularFaseGrupos();
     void simularFasesFinales();
     void mostrarEstadisticasFinales();
+    void guardarDatos();
+    void asignarFechasFaseGrupos();
 };
 
 #endif // TORNEO_H
